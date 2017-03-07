@@ -1,69 +1,51 @@
 package store.logic;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 
 import domain.User;
 import store.UserStore;
-import store.utils.ConnectionFactory;
-import store.utils.JdbcUtils;
+import store.mapper.UserMapper;
 
 public class UserStoreLogic implements UserStore{
 	
-	ConnectionFactory factory;
+	private SqlSessionFactory factory;
 	
 	public UserStoreLogic() {
-		factory = ConnectionFactory.getInstance();
+		factory = SqlSessionFactoryProvider.getSqlSessionFactory();
 	}
 
 	@Override
 	public boolean create(User user) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		int resultCount = 0;
-		try {
-			conn = factory.createConnetion();
-			pstmt = conn.prepareStatement(
-					"insert into user_tb values(?,?,?)");
-			pstmt.setString(1, user.getLoginId());
-			pstmt.setString(2, user.getPassword());
-			pstmt.setString(3, user.getName());
-			resultCount = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally{
-			JdbcUtils.close(conn, pstmt);
+		SqlSession session = factory.openSession();
+		try{
+			UserMapper mapper = session.getMapper(UserMapper.class);
+			if(mapper.create(user)){
+				session.commit();
+				return true;
+			}else{
+				session.rollback();
+				return false;
+			}
+		}finally{
+			session.close();
 		}
-		return resultCount > 0;
 	}
 
 	@Override
 	public User read(String id) {
-		Connection conn =null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		SqlSession session = factory.openSession();
 		User user = null;
-		try {
-			conn = factory.createConnetion();
-			pstmt = conn.prepareStatement(
-					"select loginid, password, name from user_tb where loginid =?");
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			if(rs.next()){
-				user = new User();
-				user.setLoginId(rs.getString("loginid"));
-				user.setName(rs.getString("name"));
-				user.setPassword(rs.getString("password"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally{
-			JdbcUtils.close(conn, pstmt, rs);
+		try{
+			UserMapper mapper = session.getMapper(UserMapper.class);
+			user = mapper.read(id);
+		}finally{
+			session.close();
 		}
 		return user;
 	}
+	
+	
 
 }
 

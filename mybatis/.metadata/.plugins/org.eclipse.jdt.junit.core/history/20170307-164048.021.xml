@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="AuthorStroeLogicTest" project="MyBlog_templete" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="blog.store.logic.AuthorStroeLogicTest" time="0.821">
-    <testcase name="testUpdateAuthor" classname="blog.store.logic.AuthorStroeLogicTest" time="0.821"/>
-  </testsuite>
-</testrun>

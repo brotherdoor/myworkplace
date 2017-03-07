@@ -1,0 +1,41 @@
+package store.logic;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import domain.User;
+import store.UserStore;
+
+public class UserStoreLogic implements UserStore{
+	
+	private SqlSessionFactory factory;
+	
+	public UserStoreLogic() {
+		factory = SqlSessionFactoryProvider.getSqlSessionFactory();
+	}
+
+	@Override
+	public boolean create(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public User read(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
