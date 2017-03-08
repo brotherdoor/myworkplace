@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="blog.store.mapper.AuthorMapper"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="blog.domain.Author"/>
 <fullyQualifiedTypeName name="java.io.Reader"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
-<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
 <fullyQualifiedTypeName name="store.logic.SqlSessionFactoryProvider"/>
-<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
 <fullyQualifiedTypeName name="store.mapper.UserMapper"/>
-<fullyQualifiedTypeName name="org.junit.Before"/>
 <fullyQualifiedTypeName name="store.logic.UserStoreLogic"/>
 <fullyQualifiedTypeName name="domain.User"/>
+<fullyQualifiedTypeName name="blog.store.facade.BlogStore"/>
+<fullyQualifiedTypeName name="blog.store.facade.PostStore"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Many"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Results"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Result"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.One"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Select"/>
+<fullyQualifiedTypeName name="blog.store.mapper.BlogMapper"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+<fullyQualifiedTypeName name="blog.store.logic.SqlSessionFactoryProvider"/>
+<fullyQualifiedTypeName name="org.junit.Before"/>
+<fullyQualifiedTypeName name="blog.store.logic.PostStoreLogic"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="blog.store.mapper.PostMapper"/>
+<fullyQualifiedTypeName name="blog.domain.Post"/>
+<fullyQualifiedTypeName name="blog.domain.Author"/>
+<fullyQualifiedTypeName name="blog.store.logic.BlogStoreLogic"/>
+<fullyQualifiedTypeName name="blog.domain.Blog"/>
 </qualifiedTypeNameHistroy>

@@ -7,6 +7,10 @@
 	
 	<typeAliases>
 		<typeAlias  type="blog.domain.Author" alias="Author"/>
+		<typeAlias  type="blog.domain.Blog" alias="Blog"/>
+		<typeAlias  type="blog.domain.Post" alias="Post"/>
+		<typeAlias  type="blog.domain.Comment" alias="Comment"/>
+		<typeAlias  type="blog.domain.Tag" alias="Tag"/>
 	</typeAliases>
 	
 	
@@ -24,6 +28,8 @@
   
   <mappers>
   	<mapper resource="blog/store/mapper/AuthorMapper.xml"/>
+  	<mapper resource="blog/store/mapper/PostMapper.xml"/>
+  	<mapper resource="blog/store/mapper/BlogMapper.xml"/>
   </mappers>
   
 </configuration>

@@ -62,7 +62,5 @@
   		WHERE author_id = #{id}
   	</if>
   </select>
-  
-  
   	
 </mapper>
