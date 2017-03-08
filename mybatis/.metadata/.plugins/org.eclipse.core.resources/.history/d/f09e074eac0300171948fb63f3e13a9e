@@ -1,0 +1,63 @@
+package blog.store.logic;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import blog.domain.Blog;
+
+public class BlogStoreLogicTest {
+	
+	private BlogStoreLogic store;
+	
+	@Before
+	public void setUp(){
+		store = new BlogStoreLogic();
+	}
+
+	@Test
+	public void testFindBlog() {
+		Blog blog = store.findBlog(1);
+		assertEquals("하늘바람별", blog.getTitle());
+		assertEquals("demonpark", blog.getAuthor().getId());
+		assertNotNull(blog.getPosts());
+		assertEquals(2, blog.getPosts().size());
+		assertEquals("mybatis", blog.getPosts().get(0).getSubject());
+		assertEquals("mybatis의 이해와 적용", blog.getPosts().get(0).getContents());
+
+	}
+
+	@Test
+	public void testFindBlogByAuthorId() {
+		Blog blog = store.findBlogByAuthorId("demonpark");
+		assertEquals(1, blog.getId());
+		assertEquals("하늘바람별", blog.getTitle());
+	}
+//
+//	@Test
+//	public void testFindAllBlogs() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testFindBlogsByTitle() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testRegistBlog() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testUpdateBlog() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testDeleteBlog() {
+//		fail("Not yet implemented");
+//	}
+
+}

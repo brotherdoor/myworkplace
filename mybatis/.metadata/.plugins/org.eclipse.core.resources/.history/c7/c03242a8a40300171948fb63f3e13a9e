@@ -1,0 +1,53 @@
+package blog.store.logic;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import blog.domain.Blog;
+import blog.store.facade.BlogStore;
+
+public class BlogStoreLogic implements BlogStore{
+	
+	private SqlSessionFactory factory;
+	
+	public BlogStoreLogic() {
+		factory = SqlSessionFactoryProvider.getSqlSessionFactory();
+	}
+
+	@Override
+	public Blog findBlog(int id) {
+		return null;
+	}
+
+	@Override
+	public Blog findBlogByAuthorId(String authorId) {
+		return null;
+	}
+
+	@Override
+	public List<Blog> findAllBlogs() {
+		return null;
+	}
+
+	@Override
+	public List<Blog> findBlogsByTitle(String title) {
+		return null;
+	}
+
+	@Override
+	public void registBlog(Blog blog) {
+		
+	}
+
+	@Override
+	public int updateBlog(Blog blog) {
+		return 0;
+	}
+
+	@Override
+	public int deleteBlog(int id) {
+		return 0;
+	}
+
+}

@@ -1,0 +1,60 @@
+package blog.store.logic;
+
+import java.util.List;
+
+import blog.domain.Post;
+import blog.store.facade.PostStore;
+
+public class PostStoreLogic implements PostStore{
+
+	@Override
+	public Post findPost(int id) {
+		return null;
+	}
+
+	@Override
+	public List<Post> findAllPost() {
+		return null;
+	}
+
+	@Override
+	public List<Post> findPostsByBlogId(int id) {
+		return null;
+	}
+
+	@Override
+	public List<Post> findPostsByAuthorName(String authorName) {
+		return null;
+	}
+
+	@Override
+	public List<Post> findPostsByBlogTitle(String blogTitle) {
+		return null;
+	}
+
+	@Override
+	public List<Post> findPostsBySubject(String subject) {
+		return null;
+	}
+
+	@Override
+	public List<Post> findPostsByContents(String contents) {
+		return null;
+	}
+
+	@Override
+	public int registPost(Post post) {
+		return 0;
+	}
+
+	@Override
+	public int updatePost(Post post) {
+		return 0;
+	}
+
+	@Override
+	public int deletePost(int id) {
+		return 0;
+	}
+
+}

@@ -1,0 +1,57 @@
+package blog.store.logic;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import blog.domain.Blog;
+
+public class BlogStoreLogicTest {
+	
+	private BlogStoreLogic store;
+	
+	@Before
+	public void setUp(){
+		store = new BlogStoreLogic();
+	}
+
+	@Test
+	public void testFindBlog() {
+		Blog blog = store.findBlog(1);
+		assertEquals("ÇÏ´Ã¹Ù¶÷º°", blog.getTitle());
+		assertEquals("demonpark", blog.getAuthor().getId());
+		assertEquals("mybatis", blog.getPosts().get(0).getSubject());
+	}
+
+//	@Test
+//	public void testFindBlogByAuthorId() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testFindAllBlogs() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testFindBlogsByTitle() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testRegistBlog() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testUpdateBlog() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testDeleteBlog() {
+//		fail("Not yet implemented");
+//	}
+
+}

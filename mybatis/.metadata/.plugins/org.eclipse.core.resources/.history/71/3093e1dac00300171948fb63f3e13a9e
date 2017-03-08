@@ -1,0 +1,59 @@
+package blog.store.logic;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class PostStoreLogicTest {
+
+	@Test
+	public void testFindPost() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindAllPost() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindPostsByBlogId() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindPostsByAuthorName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindPostsByBlogTitle() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindPostsBySubject() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFindPostsByContents() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRegistPost() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testUpdatePost() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDeletePost() {
+		fail("Not yet implemented");
+	}
+
+}

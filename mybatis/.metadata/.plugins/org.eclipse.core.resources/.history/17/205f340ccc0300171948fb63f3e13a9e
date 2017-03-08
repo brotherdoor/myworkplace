@@ -1,0 +1,102 @@
+package blog.store.logic;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import blog.domain.Post;
+import blog.store.facade.PostStore;
+import blog.store.mapper.PostMapper;
+
+public class PostStoreLogic implements PostStore{
+	
+	private SqlSessionFactory factory;
+	
+	public PostStoreLogic() {
+		factory = SqlSessionFactoryProvider.getSqlSessionFactory();
+	}
+
+	@Override
+	public Post findPost(int id) {
+		SqlSession session = factory.openSession();
+		Post post = null;
+		try{
+			PostMapper mapper = session.getMapper(PostMapper.class);
+			post = mapper.findPost(id);
+		}finally{
+			session.close();
+		}
+		return post;
+	}
+
+	@Override
+	public List<Post> findAllPost() {
+		SqlSession session = factory.openSession();
+		List<Post> list = null;
+		try{
+			PostMapper mapper = session.getMapper(PostMapper.class);
+			list = mapper.findAllPost();
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<Post> findPostsByBlogId(int id) {
+		SqlSession session = factory.openSession();
+		List<Post> list = null;
+		try{
+			PostMapper mapper = session.getMapper(PostMapper.class);
+			list = mapper.findPostsByBlogId(id);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<Post> findPostsByAuthorName(String authorName) {
+		SqlSession session = factory.openSession();
+		List<Post> list = null;
+		try{
+			PostMapper mapper = session.getMapper(PostMapper.class);
+			list = mapper.findPostsByAuthorName(authorName);
+		}finally{
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public List<Post> findPostsByBlogTitle(String blogTitle) {
+		return null;
+	}
+
+	@Override
+	public List<Post> findPostsBySubject(String subject) {
+		return null;
+	}
+
+	@Override
+	public List<Post> findPostsByContents(String contents) {
+		return null;
+	}
+
+	@Override
+	public int registPost(Post post) {
+		return 0;
+	}
+
+	@Override
+	public int updatePost(Post post) {
+		return 0;
+	}
+
+	@Override
+	public int deletePost(int id) {
+		return 0;
+	}
+
+}

@@ -1,0 +1,69 @@
+package blog.store.logic;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class PostStoreLogicTest {
+	
+	private PostStoreLogic store;
+	
+	@Before
+	public void setUp(){
+		store = new PostStoreLogic();
+	}
+
+//	@Test
+//	public void testFindPost() {
+//		assertEquals("mybatis", store.findPost(1).getSubject());
+//		assertEquals("mybatis3", store.findPost(2).getSubject());
+//	}
+//
+//	@Test
+//	public void testFindAllPost() {
+//		assertEquals(3, store.findAllPost().size());
+//		assertEquals("mybatis", store.findAllPost().get(0).getSubject());
+//	}
+
+//	@Test
+//	public void testFindPostsByBlogId() {
+//		assertEquals(2, store.findPostsByBlogId(1).size());
+//	}
+
+	@Test
+	public void testFindPostsByAuthorName() {
+		assertEquals(3, store.findPostsByAuthorName(null).size());
+	}
+
+//	@Test
+//	public void testFindPostsByBlogTitle() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testFindPostsBySubject() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testFindPostsByContents() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testRegistPost() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testUpdatePost() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testDeletePost() {
+//		fail("Not yet implemented");
+//	}
+
+}
