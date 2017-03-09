@@ -1,0 +1,56 @@
+<!doctype>
+<html>
+    <head>
+        <title>이미지 슬라이드</title>
+        <script src="js/jquery-3.1.1.js"></script>
+        <style>
+            #clickMe{
+                background: #CEFBC9;
+                padding: 20px;
+                text-align: center;
+                width: 450px;
+                display: block;
+                border: 2px solid #CEFBC9;
+            }
+            #picFrame{
+                background: #EEEEEE;
+                padding: 20px;
+                width: 450px;
+                display: none;
+                border: 2px solid #EEEEEE;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="clickMe">Show Image</div>
+        <div id="picFrame">
+            <img src="image/gogi.jpg" width="450px">
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#clickMe").click(function(){
+                    $("img").fadeIn(5000);
+                    $("#picFrame").slideToggle("slow");
+                 });
+            });
+        </script>
+    </body>
+</html>
+    
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    

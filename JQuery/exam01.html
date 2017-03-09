@@ -1,0 +1,35 @@
+<!doctype>
+<html>
+    <head>
+        <title>jQuery Example</title>
+        
+        <script src="js/jquery-3.1.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("p").dblclick(function(){
+                    $(this).hide();
+                });
+            });
+
+            $(document).ready(function(){
+                $("input").focus(function(){
+                   $(this).css("background-color", "#CEFBC9");
+                });
+                $("input").blur(function(){
+                    $(this).css("background-color", "#FFFFFF");
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <p>Double Click</p>
+        <p>Double Click</p>
+        <p>Double Click</p>
+        <p>Double Click</p>
+        <p>Double Click</p>
+        name : <input type="text" name="fulName">
+        email : <input type="text" name="email">
+        
+    
+    </body>
+</html>

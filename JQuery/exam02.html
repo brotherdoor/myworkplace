@@ -1,0 +1,111 @@
+<!doctype>
+<html>
+    <head>
+        <title>jQueryExam02</title>
+        <script src="js/jquery-3.1.1.js"></script>
+    </head>
+    <body>
+        
+        <form action="javascript:alert('전송완료');">
+            <dl>
+                <dt>ID</dt>
+                <dd>
+                    <input type="text" name="id">
+                </dd>
+                
+                <dt>PW</dt>
+                <dd>
+                    <input type="password" name="pass">
+                </dd>
+                
+                <dt>GENDER</dt>
+                <dd>
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">남성</label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">여성</label>
+                </dd>
+                
+                <dt>HOBBY</dt>
+                <dd>
+                    <input type="checkbox"><label>music</label>
+                    <input type="checkbox"><label>book</label>
+                    <input type="checkbox"><label>movie</label>
+                    <span><button>all check</button></span>
+                </dd>
+                
+                <dt>INTRODUCE</dt>
+                <dd>
+                    <textarea name="comment"></textarea>
+                </dd>
+            </dl>
+            <input type="submit" value="submit">
+            <input type="reset" value="cancel">
+        </form>
+        
+        <script>
+//            id check
+            $("form").submit(function(){
+                if($("input[name='id']").val() == ""){
+                    $("input[name='id']").css("border", "1px solid red").after(
+                    "<span>please input id</span>");
+                    $("span").css("color", "red").fadeOut(5000);
+                    return false;
+                }
+            });
+            
+//            input tag css 변경
+            $(":input").focus(function(){
+                $(this).css("border", "2px red solid");
+            }).blur(function(){
+                $(this).css("border", "");
+            });
+            
+//            안내 출력
+            $(":text").focus(function(){
+                $(this).after("<strong>필수 항목 입니다.</strong>");
+            }).blur(function(){
+                $("strong").remove();
+            });
+            
+            $(":password").focus(function(){
+                $(this).after("<strong>영문/숫자 조합입니다.</strong>");
+            }).blur(function(){
+                $("strong").remove();
+            });
+            
+//            라디오 버튼 선택시 폰트 변경
+            $(":radio").click(function(){
+                $("label").css("font-weight", "");
+                $("label[for='" + $(this).attr("id") + "']").css("font-weight", "bold");
+            });
+            
+//            $("label").click(function(){
+//                $("label").css("font-weight", "");
+//                $(this).css("font-weight", "bold");
+//            });
+            
+//            체크박스 모두 선택
+            $("button").click(function(){
+                $(":checkbox").attr("checked", "checked");
+                return false;
+            });
+            
+//            버튼 위에서의 이벤트 감지
+            $(":submit").mouseover(function(){
+                $(":reset").after("<p>회원 가입을 하시겠습니까</p>");
+                $("p").css("color", "blue");
+            }).mouseout(function(){
+                $("p").remove();
+            });
+            
+            $(":reset").mouseover(function(){
+                $(this).after("<p>회원 가입을 취소 하시겠습니까</p>");
+                $("p").css("color", "blue");
+            }).mouseout(function(){
+                $("p").remove();
+            });
+        </script>
+    
+    </body>
+</html>
