@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PostStoreLogicTest" project="MyBlog_templete" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="blog.store.logic.PostStoreLogicTest" time="0.98">
+    <testcase name="testDeletePost" classname="blog.store.logic.PostStoreLogicTest" time="0.98"/>
+  </testsuite>
+</testrun>

@@ -2,12 +2,16 @@ package blog.store.logic;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import blog.domain.Author;
 import blog.domain.Blog;
+import blog.domain.Comment;
 import blog.domain.Post;
+import blog.domain.Tag;
 
 public class PostStoreLogicTest {
 	
@@ -30,10 +34,14 @@ public class PostStoreLogicTest {
 //		assertEquals("mybatis", store.findAllPost().get(0).getSubject());
 //	}
 
-//	@Test
-//	public void testFindPostsByBlogId() {
-//		assertEquals(2, store.findPostsByBlogId(1).size());
-//	}
+	@Test
+	public void testFindPostsByBlogId() {
+		Post p = store.findPost(1);
+		List<Tag> tagList = p.getTags();
+		List<Comment> commentList = p.getComments();
+		assertEquals("mybatis", tagList.get(0).getName());
+		assertEquals("¿”¿Á∂Ù", commentList.get(0).getName());
+	}
 
 //	@Test
 //	public void testFindPostsByAuthorName() {
@@ -55,30 +63,35 @@ public class PostStoreLogicTest {
 //		assertEquals(2, store.findPostsByContents("my").size());
 //	}
 //
-	@Test
-	public void testRegistPost() {
-		Post p = new Post();
-		Author a = new Author("n", "p", "e");
-		Blog b = new Blog();
-		b.setAuthor(a);
-		b.setId(59);
-		b.setTitle("t");
-		p.setAuthor(a);
-		p.setBlog(b);
-		p.setSubject("sub");
-		p.setContents("con");
-		
-		store.registPost(p);
-	}
-//
+//	@Test
+//	public void testRegistPost() {
+//		Post p = new Post();
+//		Author a = new Author("n", "p", "e");
+//		a.setId("22");
+//		Blog b = new Blog();
+//		b.setAuthor(a);
+//		b.setId(22);
+//		b.setTitle("t");
+//		p.setAuthor(a);
+//		p.setBlog(b);
+//		p.setSubject("sub");
+//		p.setContents("con");
+//		
+//		assertEquals(44, store.registPost(p));
+//	}
+
 //	@Test
 //	public void testUpdatePost() {
-//		fail("Not yet implemented");
+//		Post p = store.findPost(54);
+//		p.setSubject("update");
+//		p.setContents("kkk");
+//		
+//		assertEquals(1, store.updatePost(p));	
 //	}
 //
 //	@Test
 //	public void testDeletePost() {
-//		fail("Not yet implemented");
+//		assertEquals(1, store.deletePost(54));
 //	}
 
 }

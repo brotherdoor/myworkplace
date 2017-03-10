@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>유효성 검증(Validation)</h1>
+	<form action="#">
+		<table>
+			<tr><td>이름</td></tr>
+			<tr><td><input type="text" id="name"></td></tr>
+			<tr><td>이메일</td></tr>
+			<tr><td><input type="text" id="name"></td></tr>
+			<tr><td>이메일(확인)</td></tr>
+			<tr><td><input type="text" id="name"></td></tr>
+			<tr><td>재학유무</td></tr>
+			<tr><td><button type="radio">유</button></td></tr>
+			<tr><td>희망 수강 과목</td></tr>
+			<tr><td></td></tr>
+			<tr><td>건의사항</td></tr>
+			<tr><td><textarea id="wish"></textarea></td></tr>
+		</table>
+	</form>
+
+</body>
+</html>

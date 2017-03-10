@@ -15,6 +15,12 @@
 		<association property="blog" column="blog_id"
 			select="blog.store.mapper.BlogMapper.findBlog"
 			jdbcType="VARCHAR" javaType="Blog"/>
+		<collection property="comments" column="id" ofType="Comment"
+			select="getCommentsById"
+			javaType="ArrayList" jdbcType="NUMERIC"/>
+		<collection property="tags" column="id" ofType="Tag"
+			select="getTagById"
+			javaType="ArrayList" jdbcType="NUMERIC"/>
 	</resultMap>
 	
 
@@ -22,6 +28,18 @@
 		SELECT id, subject, contents, author_id, blog_id
 		FROM post_tb
 	</sql>
+	
+	<select id="getCommentsById" parameterType="int" resultType="Comment">
+		SELECT id, name, comment_contents, post_id
+		FROM comment_tb
+		WHERE post_id = #{id}
+	</select>
+	
+	<select id="getTagById" parameterType="int" resultType="Tag">
+		SELECT id, name
+		FROM tag_tb
+		WHERE post_id = #{id}
+	</select>
 	
 	<select id="findPost" parameterType="int" resultMap="postMap">
 		<include refid="selectPost"/>
@@ -52,13 +70,24 @@
 		WHERE contents LIKE '%${contents}%'
 	</select>
 	
-	<insert id="registPost" parameterType="Post" useGeneratedKeys="true">
-		<selectKey keyProperty="id" resultType="int" order="BEFORE">
-			SELECT post_seq.nextval FROM dual
-		</selectKey>	
-		INSERT INTO post_tb
-		VALUES (#{id}, #{subject}, #{contents}, #{author.id}, #{blog.id})
+	
+	<insert id="registPost" parameterType="Post" useGeneratedKeys="true" keyColumn="id" keyProperty="id">	
+		INSERT INTO post_tb (id, subject, contents, author_id, blog_id)
+		VALUES (post_seq.nextval, #{subject}, #{contents}, #{author.id}, #{blog.id})
 	</insert>
+	
+	<update id="updatePost" parameterType="Post">
+		UPDATE post_tb 
+		SET subject = #{subject}, contents = #{contents}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="deletePost" parameterType="int">
+		DELETE FROM post_tb
+		WHERE id = #{id}
+	</delete>
+	
+	
 	
 	
 

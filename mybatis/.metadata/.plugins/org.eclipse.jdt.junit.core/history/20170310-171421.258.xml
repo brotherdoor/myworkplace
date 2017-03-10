@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PostStoreLogicTest" project="MyBlog_templete" tests="2" started="2" failures="0" errors="2" ignored="0">
+  <testsuite name="blog.store.logic.PostStoreLogicTest" time="0.391">
+    <testcase name="testDeletePost" classname="blog.store.logic.PostStoreLogicTest" time="0.39">
+      <error>org.apache.ibatis.builder.IncompleteElementException: Could not find result map blog.store.mapper.PostMapper.Comment&#13;
+	at org.apache.ibatis.builder.MapperBuilderAssistant.getStatementResultMaps(MapperBuilderAssistant.java:346)&#13;
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addMappedStatement(MapperBuilderAssistant.java:290)&#13;
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:109)&#13;
+	at org.apache.ibatis.session.Configuration.buildAllStatements(Configuration.java:775)&#13;
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:745)&#13;
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:740)&#13;
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.&lt;init&gt;(MapperMethod.java:217)&#13;
+	at org.apache.ibatis.binding.MapperMethod.&lt;init&gt;(MapperMethod.java:48)&#13;
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)&#13;
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)&#13;
+	at com.sun.proxy.$Proxy11.deletePost(Unknown Source)&#13;
+	at blog.store.logic.PostStoreLogic.deletePost(PostStoreLogic.java:151)&#13;
+	at blog.store.logic.PostStoreLogicTest.testDeletePost(PostStoreLogicTest.java:94)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)&#13;
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)&#13;
+Caused by: java.lang.IllegalArgumentException: Result Maps collection does not contain value for blog.store.mapper.PostMapper.Comment&#13;
+	at org.apache.ibatis.session.Configuration$StrictMap.get(Configuration.java:875)&#13;
+	at org.apache.ibatis.session.Configuration.getResultMap(Configuration.java:627)&#13;
+	at org.apache.ibatis.builder.MapperBuilderAssistant.getStatementResultMaps(MapperBuilderAssistant.java:344)&#13;
+	... 36 more&#13;
+&#13;
+</error>
+    </testcase>
+    <testcase name="testFindPostsByBlogId" classname="blog.store.logic.PostStoreLogicTest" time="0.001">
+      <error>org.apache.ibatis.builder.IncompleteElementException: Could not find result map blog.store.mapper.PostMapper.Comment&#13;
+	at org.apache.ibatis.builder.MapperBuilderAssistant.getStatementResultMaps(MapperBuilderAssistant.java:346)&#13;
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addMappedStatement(MapperBuilderAssistant.java:290)&#13;
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:109)&#13;
+	at org.apache.ibatis.session.Configuration.buildAllStatements(Configuration.java:775)&#13;
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:745)&#13;
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:740)&#13;
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.&lt;init&gt;(MapperMethod.java:217)&#13;
+	at org.apache.ibatis.binding.MapperMethod.&lt;init&gt;(MapperMethod.java:48)&#13;
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:65)&#13;
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:58)&#13;
+	at com.sun.proxy.$Proxy11.findPost(Unknown Source)&#13;
+	at blog.store.logic.PostStoreLogic.findPost(PostStoreLogic.java:27)&#13;
+	at blog.store.logic.PostStoreLogicTest.testFindPostsByBlogId(PostStoreLogicTest.java:39)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)&#13;
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)&#13;
+Caused by: java.lang.IllegalArgumentException: Result Maps collection does not contain value for blog.store.mapper.PostMapper.Comment&#13;
+	at org.apache.ibatis.session.Configuration$StrictMap.get(Configuration.java:875)&#13;
+	at org.apache.ibatis.session.Configuration.getResultMap(Configuration.java:627)&#13;
+	at org.apache.ibatis.builder.MapperBuilderAssistant.getStatementResultMaps(MapperBuilderAssistant.java:344)&#13;
+	... 36 more&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

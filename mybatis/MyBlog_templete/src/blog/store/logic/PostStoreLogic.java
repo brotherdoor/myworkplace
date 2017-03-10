@@ -116,17 +116,11 @@ public class PostStoreLogic implements PostStore{
 	@Override
 	public int registPost(Post post) {
 		SqlSession session = factory.openSession();
-		int generatedKey = -1;
 		try{
 			PostMapper mapper = session.getMapper(PostMapper.class);
-			generatedKey = mapper.registPost(post);
-			if(generatedKey != -1){
-				session.commit();
-				return generatedKey;
-			}else{
-				session.rollback();
-				return generatedKey;
-			}
+			int generatedKey = mapper.registPost(post);
+			session.commit();
+			return generatedKey;
 		}finally{
 			session.close();
 		}
@@ -134,12 +128,36 @@ public class PostStoreLogic implements PostStore{
 
 	@Override
 	public int updatePost(Post post) {
-		return 0;
+		SqlSession session = factory.openSession();
+		try{
+			PostMapper mapper = session.getMapper(PostMapper.class);
+			int result = mapper.updatePost(post);
+			if(result > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+			return result;
+		}finally{
+			session.close();
+		}
 	}
 
 	@Override
 	public int deletePost(int id) {
-		return 0;
+		SqlSession session = factory.openSession();
+		try{
+			PostMapper mapper = session.getMapper(PostMapper.class);
+			int result = mapper.deletePost(id);
+			if(result > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+			return result;
+		}finally{
+			session.close();
+		}
 	}
 
 }
