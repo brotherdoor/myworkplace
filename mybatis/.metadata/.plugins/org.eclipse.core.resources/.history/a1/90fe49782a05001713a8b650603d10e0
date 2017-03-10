@@ -1,0 +1,49 @@
+package controller;
+
+import java.io.IOException;
+import java.io.OutputStream;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+import domain.Customer;
+
+@WebServlet("/getCustomer.do")
+public class XMLServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		response.setContentType("text/xml;charset=utf-8");
+		OutputStream out = response.getOutputStream();
+		Customer cus = new Customer();
+		cus.setId("id");
+		cus.setPassword("111");
+		cus.setName("name");
+		cus.setAddress("address");
+		try {
+			JAXBContext context = JAXBContext.newInstance(Customer.class);
+			Marshaller m = context.createMarshaller();
+			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, boolean.true);
+			m.marshal(cus, out);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
